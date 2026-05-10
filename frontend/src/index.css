@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  min-height:100vh;
+}
+
+body{
+  background:#fff7ed;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
+  color:#1f2937;
+}
+
+/* Smaller Fonts Globally */
+
+h1{
+  font-size:28px !important;
+}
+
+h2{
+  font-size:20px !important;
+}
+
+p{
+  font-size:12px !important;
+}
+
+button{
+  font-size:16px !important;
+  cursor:pointer;
+  transition:0.3s;
+  padding:14px 24px;
+  border:none;
+  border-radius:14px;
+}
+
+button:hover{
+  opacity:0.95;
+  transform:translateY(-2px);
+}
+
+/* Bigger Inputs */
+
+input,
+textarea{
+  width:100%;
+  padding:18px;
+  border-radius:16px;
+  border:1px solid #d1d5db;
+  font-size:16px;
+  outline:none;
+}
+
+/* Bigger Cards */
+
+.card{
+  background:white;
+  padding:24px;
+  border-radius:28px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Images */
+
+img{
+  width:100%;
+  display:block;
+  border-radius:15px;
+}
+
+/* Links */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+  width:13px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#f97316;
+  border-radius:20px;
+}

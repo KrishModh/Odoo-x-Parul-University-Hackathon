@@ -1,0 +1,16 @@
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #080a12;
+  --surface: #101522;
+  --text: #f7f9ff;
+  --muted: #aab4c7;
+  --accent: #43e0cf;
+  --accent-2: #9d7dff;
+  --danger: #ff7182;
+  --hairline: rgba(255, 255, 255, 0.14);
+  --hairline-strong: rgba(255, 255, 255, 0.28);
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-strong: rgba(13, 18, 32, 0.68);
+  --shadow: 0 24px 90px rgba(0, 0, 0, 0.34);
+}

@@ -1,0 +1,22 @@
+.google-button {
+  min-height: 54px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--text);
+  background: var(--glass);
+  font-weight: 900;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+}
+
+.google-button:hover {
+  transform: translateY(-2px);
+}
+
+.google-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
