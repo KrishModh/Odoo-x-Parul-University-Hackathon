@@ -10,17 +10,34 @@
     "avg_budget": 25000,
     "ideal_duration": "5-7 Days",
     "popularity_score": 9.5,
-    "trip_type": ["Adventure", "Road Trip", "Nature"],
+    "trip_type": [
+      "Adventure",
+      "Road Trip",
+      "Nature"
+    ],
     "weather": "Cold and dry",
-    "coordinates": { "lat": 34.1526, "lng": 77.577 },
+    "coordinates": {
+      "lat": 34.1526,
+      "lng": 77.577
+    },
     "hero_image": "https://images.unsplash.com/photo-1589793907316-f94025b46850?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Pangong Lake", "Nubra Valley", "Thiksey Monastery", "Khardung La"],
-    "travel_tips": ["Acclimatize for 24-48 hours", "Carry layers and sunscreen", "Book permits early", "Avoid a rushed first day"]
+    "top_highlights": [
+      "Pangong Lake",
+      "Nubra Valley",
+      "Thiksey Monastery",
+      "Khardung La"
+    ],
+    "travel_tips": [
+      "Acclimatize for 24-48 hours",
+      "Carry layers and sunscreen",
+      "Book permits early",
+      "Avoid a rushed first day"
+    ]
   },
   {
     "id": 2,
@@ -33,17 +50,34 @@
     "avg_budget": 18000,
     "ideal_duration": "4-6 Days",
     "popularity_score": 9.3,
-    "trip_type": ["Beach", "Nightlife", "Food"],
+    "trip_type": [
+      "Beach",
+      "Nightlife",
+      "Food"
+    ],
     "weather": "Warm and humid",
-    "coordinates": { "lat": 15.2993, "lng": 74.124 },
+    "coordinates": {
+      "lat": 15.2993,
+      "lng": 74.124
+    },
     "hero_image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1570202128383-b874d8bd4758?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Baga Beach", "Fontainhas", "Dudhsagar Falls", "Assagao Cafes"],
-    "travel_tips": ["Choose North Goa for nightlife", "Choose South Goa for quiet stays", "Rent scooters only with valid license", "Reserve popular restaurants ahead"]
+    "top_highlights": [
+      "Baga Beach",
+      "Fontainhas",
+      "Dudhsagar Falls",
+      "Assagao Cafes"
+    ],
+    "travel_tips": [
+      "Choose North Goa for nightlife",
+      "Choose South Goa for quiet stays",
+      "Rent scooters only with valid license",
+      "Reserve popular restaurants ahead"
+    ]
   },
   {
     "id": 3,
@@ -56,17 +90,34 @@
     "avg_budget": 16000,
     "ideal_duration": "3-5 Days",
     "popularity_score": 9.2,
-    "trip_type": ["Heritage", "Food", "Shopping"],
+    "trip_type": [
+      "Heritage",
+      "Food",
+      "Shopping"
+    ],
     "weather": "Dry and warm",
-    "coordinates": { "lat": 26.9124, "lng": 75.7873 },
+    "coordinates": {
+      "lat": 26.9124,
+      "lng": 75.7873
+    },
     "hero_image": "https://images.unsplash.com/photo-1599661046827-dacde6976549?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Amber Fort", "City Palace", "Hawa Mahal", "Johari Bazaar"],
-    "travel_tips": ["Start fort visits early", "Carry cash for markets", "Use guided tours for context", "Book sunset viewpoints in advance"]
+    "top_highlights": [
+      "Amber Fort",
+      "City Palace",
+      "Hawa Mahal",
+      "Johari Bazaar"
+    ],
+    "travel_tips": [
+      "Start fort visits early",
+      "Carry cash for markets",
+      "Use guided tours for context",
+      "Book sunset viewpoints in advance"
+    ]
   },
   {
     "id": 4,
@@ -79,17 +130,34 @@
     "avg_budget": 20000,
     "ideal_duration": "3-5 Days",
     "popularity_score": 9.1,
-    "trip_type": ["Luxury", "Couple", "Heritage"],
+    "trip_type": [
+      "Luxury",
+      "Couple",
+      "Heritage"
+    ],
     "weather": "Pleasant and dry",
-    "coordinates": { "lat": 24.5854, "lng": 73.7125 },
+    "coordinates": {
+      "lat": 24.5854,
+      "lng": 73.7125
+    },
     "hero_image": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Lake Pichola", "City Palace", "Bagore Ki Haveli", "Sajjangarh"],
-    "travel_tips": ["Stay near the old city for walkability", "Book lake-view dinners early", "Avoid midday palace queues", "Keep evenings open for sunsets"]
+    "top_highlights": [
+      "Lake Pichola",
+      "City Palace",
+      "Bagore Ki Haveli",
+      "Sajjangarh"
+    ],
+    "travel_tips": [
+      "Stay near the old city for walkability",
+      "Book lake-view dinners early",
+      "Avoid midday palace queues",
+      "Keep evenings open for sunsets"
+    ]
   },
   {
     "id": 5,
@@ -102,17 +170,34 @@
     "avg_budget": 15000,
     "ideal_duration": "4-6 Days",
     "popularity_score": 8.9,
-    "trip_type": ["Adventure", "Nature", "Friends"],
+    "trip_type": [
+      "Adventure",
+      "Nature",
+      "Friends"
+    ],
     "weather": "Cool mountain climate",
-    "coordinates": { "lat": 32.2396, "lng": 77.1887 },
+    "coordinates": {
+      "lat": 32.2396,
+      "lng": 77.1887
+    },
     "hero_image": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1626621331169-5f34be280ed9?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1616419926077-6642c1af2caa?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Solang Valley", "Old Manali", "Atal Tunnel", "Hadimba Temple"],
-    "travel_tips": ["Check road status in winter", "Keep buffer time for traffic", "Book adventure operators carefully", "Pack layers even in summer"]
+    "top_highlights": [
+      "Solang Valley",
+      "Old Manali",
+      "Atal Tunnel",
+      "Hadimba Temple"
+    ],
+    "travel_tips": [
+      "Check road status in winter",
+      "Keep buffer time for traffic",
+      "Book adventure operators carefully",
+      "Pack layers even in summer"
+    ]
   },
   {
     "id": 6,
@@ -125,17 +210,34 @@
     "avg_budget": 12000,
     "ideal_duration": "3-5 Days",
     "popularity_score": 8.8,
-    "trip_type": ["Wellness", "Adventure", "Spiritual"],
+    "trip_type": [
+      "Wellness",
+      "Adventure",
+      "Spiritual"
+    ],
     "weather": "Pleasant to warm",
-    "coordinates": { "lat": 30.0869, "lng": 78.2676 },
+    "coordinates": {
+      "lat": 30.0869,
+      "lng": 78.2676
+    },
     "hero_image": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Ganga Aarti", "River Rafting", "Beatles Ashram", "Lakshman Jhula"],
-    "travel_tips": ["Book rafting with certified operators", "Respect ashram quiet zones", "Avoid monsoon rafting", "Carry quick-dry clothes"]
+    "top_highlights": [
+      "Ganga Aarti",
+      "River Rafting",
+      "Beatles Ashram",
+      "Lakshman Jhula"
+    ],
+    "travel_tips": [
+      "Book rafting with certified operators",
+      "Respect ashram quiet zones",
+      "Avoid monsoon rafting",
+      "Carry quick-dry clothes"
+    ]
   },
   {
     "id": 7,
@@ -148,17 +250,34 @@
     "avg_budget": 22000,
     "ideal_duration": "6-8 Days",
     "popularity_score": 9.4,
-    "trip_type": ["Nature", "Wellness", "Family"],
+    "trip_type": [
+      "Nature",
+      "Wellness",
+      "Family"
+    ],
     "weather": "Tropical and humid",
-    "coordinates": { "lat": 10.8505, "lng": 76.2711 },
+    "coordinates": {
+      "lat": 10.8505,
+      "lng": 76.2711
+    },
     "hero_image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1606298855672-3efb63017be8?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Alleppey Backwaters", "Munnar Tea Estates", "Fort Kochi", "Varkala Cliffs"],
-    "travel_tips": ["Plan by region to avoid long transfers", "Book houseboats with reviews", "Carry light cottons", "Try local breakfasts"]
+    "top_highlights": [
+      "Alleppey Backwaters",
+      "Munnar Tea Estates",
+      "Fort Kochi",
+      "Varkala Cliffs"
+    ],
+    "travel_tips": [
+      "Plan by region to avoid long transfers",
+      "Book houseboats with reviews",
+      "Carry light cottons",
+      "Try local breakfasts"
+    ]
   },
   {
     "id": 8,
@@ -171,17 +290,34 @@
     "avg_budget": 24000,
     "ideal_duration": "5-7 Days",
     "popularity_score": 9.4,
-    "trip_type": ["Nature", "Luxury", "Family"],
+    "trip_type": [
+      "Nature",
+      "Luxury",
+      "Family"
+    ],
     "weather": "Cool to snowy",
-    "coordinates": { "lat": 34.0837, "lng": 74.7973 },
+    "coordinates": {
+      "lat": 34.0837,
+      "lng": 74.7973
+    },
     "hero_image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Dal Lake", "Gulmarg Gondola", "Pahalgam", "Mughal Gardens"],
-    "travel_tips": ["Check local conditions before travel", "Book gondola slots early", "Carry warm layers", "Keep buffer days in winter"]
+    "top_highlights": [
+      "Dal Lake",
+      "Gulmarg Gondola",
+      "Pahalgam",
+      "Mughal Gardens"
+    ],
+    "travel_tips": [
+      "Check local conditions before travel",
+      "Book gondola slots early",
+      "Carry warm layers",
+      "Keep buffer days in winter"
+    ]
   },
   {
     "id": 9,
@@ -194,17 +330,34 @@
     "avg_budget": 30000,
     "ideal_duration": "5-7 Days",
     "popularity_score": 9.0,
-    "trip_type": ["Beach", "Adventure", "Couple"],
+    "trip_type": [
+      "Beach",
+      "Adventure",
+      "Couple"
+    ],
     "weather": "Tropical island climate",
-    "coordinates": { "lat": 11.7401, "lng": 92.6586 },
+    "coordinates": {
+      "lat": 11.7401,
+      "lng": 92.6586
+    },
     "hero_image": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Radhanagar Beach", "Scuba Diving", "Cellular Jail", "Neil Island"],
-    "travel_tips": ["Book ferries early", "Keep cash for smaller islands", "Respect marine rules", "Avoid tight flight-ferry connections"]
+    "top_highlights": [
+      "Radhanagar Beach",
+      "Scuba Diving",
+      "Cellular Jail",
+      "Neil Island"
+    ],
+    "travel_tips": [
+      "Book ferries early",
+      "Keep cash for smaller islands",
+      "Respect marine rules",
+      "Avoid tight flight-ferry connections"
+    ]
   },
   {
     "id": 10,
@@ -217,16 +370,33 @@
     "avg_budget": 14000,
     "ideal_duration": "3-5 Days",
     "popularity_score": 8.7,
-    "trip_type": ["Nature", "Family", "Heritage"],
+    "trip_type": [
+      "Nature",
+      "Family",
+      "Heritage"
+    ],
     "weather": "Cool hill climate",
-    "coordinates": { "lat": 27.041, "lng": 88.2663 },
+    "coordinates": {
+      "lat": 27.041,
+      "lng": 88.2663
+    },
     "hero_image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1400&q=80",
     "gallery_images": [
       "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80"
     ],
-    "top_highlights": ["Tiger Hill", "Tea Estates", "Toy Train", "Batasia Loop"],
-    "travel_tips": ["Start early for Tiger Hill", "Carry rain protection", "Book toy train tickets ahead", "Choose stays with valley views"]
+    "top_highlights": [
+      "Tiger Hill",
+      "Tea Estates",
+      "Toy Train",
+      "Batasia Loop"
+    ],
+    "travel_tips": [
+      "Start early for Tiger Hill",
+      "Carry rain protection",
+      "Book toy train tickets ahead",
+      "Choose stays with valley views"
+    ]
   }
 ]
