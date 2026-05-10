@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FiActivity, FiBell, FiBookOpen, FiBriefcase, FiCalendar, FiCheckSquare, FiChevronDown, FiCreditCard, FiHome, FiMap, FiMenu, FiPackage, FiPlus, FiSearch, FiSettings, FiShare2, FiUser, FiX } from 'react-icons/fi';
+import { FiActivity, FiBookOpen, FiBriefcase, FiCalendar, FiCheckSquare, FiChevronDown, FiCreditCard, FiHome, FiMap, FiMenu, FiPackage, FiPlus, FiSettings, FiShare2, FiUser, FiX } from 'react-icons/fi';
+import GlobalSearch from '../components/GlobalSearch.jsx';
 import Logo from '../components/Logo.jsx';
+import NotificationCenter from '../components/NotificationCenter.jsx';
 import ThemeToggle from '../components/ThemeToggle.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import '../styles/layouts/MainLayout.css';
@@ -65,11 +67,11 @@ export default function MainLayout({ children }) {
           <button className="main-mobile-button" type="button" onClick={() => setMobileOpen(true)} aria-label="Open navigation"><FiMenu /></button>
           <div className="main-title">
             <span>Traveloop workspace</span>
-            <h1>{displayName}'s travel command center</h1>
+            <h1>{displayName}'s travel Command center</h1>
           </div>
-          <label className="main-search"><FiSearch /><input placeholder="Search trips, activities, budgets..." /></label>
+          <GlobalSearch className="main-search" />
           <div className="main-actions">
-            <button className="main-icon-button" type="button" aria-label="Notifications"><FiBell /><span /></button>
+            <NotificationCenter />
             <ThemeToggle />
             <div className="main-profile-menu">
               <button type="button" onClick={() => setProfileOpen((open) => !open)}>

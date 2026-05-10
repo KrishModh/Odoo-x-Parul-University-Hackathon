@@ -5,9 +5,9 @@ import ThemeToggle from '../components/ThemeToggle.jsx';
 import '../styles/layouts/AuthLayout.css';
 
 const destinations = [
-  { city: 'Kyoto', detail: 'AI route ready', icon: <FiMapPin /> },
-  { city: 'Reykjavik', detail: 'Budget synced', icon: <FiTrendingUp /> },
-  { city: 'Lisbon', detail: 'Journal prompt live', icon: <FiNavigation /> }
+  { city: 'Leh', detail: 'AI route ready', icon: <FiMapPin /> },
+  { city: 'Aasam', detail: 'Budget synced', icon: <FiTrendingUp /> },
+  { city: 'Meghalaya', detail: 'Journal prompt live', icon: <FiNavigation /> }
 ];
 
 export default function AuthLayout({ children, mode }) {

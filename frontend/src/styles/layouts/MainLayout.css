@@ -37,8 +37,7 @@
 }
 
 .main-sidebar-top button,
-.main-mobile-button,
-.main-icon-button {
+.main-mobile-button {
   width: 42px;
   height: 42px;
   display: grid;
@@ -140,46 +139,11 @@
   text-transform: uppercase;
 }
 
-.main-search {
-  min-height: 48px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0 0.95rem;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.055);
-  color: var(--muted);
-}
-
-.main-search input {
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--text);
-}
-
 .main-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 0.6rem;
-}
-
-.main-icon-button {
-  position: relative;
-}
-
-.main-icon-button span {
-  position: absolute;
-  top: 9px;
-  right: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
 }
 
 .main-profile-menu {

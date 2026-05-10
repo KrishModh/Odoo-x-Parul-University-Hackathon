@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   FiActivity,
-  FiBell,
   FiBookOpen,
   FiBriefcase,
   FiCalendar,
@@ -17,7 +16,6 @@ import {
   FiMap,
   FiMenu,
   FiPlus,
-  FiSearch,
   FiSend,
   FiSettings,
   FiShare2,
@@ -25,7 +23,9 @@ import {
   FiUser,
   FiX
 } from 'react-icons/fi';
+import GlobalSearch from '../components/GlobalSearch.jsx';
 import Logo from '../components/Logo.jsx';
+import NotificationCenter from '../components/NotificationCenter.jsx';
 import ThemeToggle from '../components/ThemeToggle.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useTrips } from '../context/TripContext.jsx';
@@ -257,15 +257,9 @@ export default function Dashboard() {
             <span>AI travel workspace</span>
             <h1>Welcome back, {displayName}</h1>
           </div>
-          <label className="dashboard-search">
-            <FiSearch />
-            <input placeholder="Search trips, cities, budgets..." />
-          </label>
+          <GlobalSearch className="dashboard-search" />
           <div className="dashboard-header-actions">
-            <button className="dashboard-icon-button" type="button" aria-label="Notifications">
-              <FiBell />
-              <span />
-            </button>
+            <NotificationCenter />
             <ThemeToggle />
             <div className="profile-menu">
               <button type="button" onClick={() => setProfileOpen((open) => !open)}>
