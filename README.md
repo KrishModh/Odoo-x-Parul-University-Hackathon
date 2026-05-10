@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="./screenshots/banner.png" alt="Traveloop Banner" width="100%" />
-
 # ✈️ Traveloop
 
-### *Your Intelligent Travel Operating System*
+### *Your Intelligent Travel Web Application*
 
 > Plan smarter. Travel better. Share everything.
 
@@ -31,45 +29,57 @@
 It's not just another travel app. Traveloop is a **connected travel operating system** where your trips, itineraries, budgets, packing lists, and memories stay in sync — powered by a real PostgreSQL backend and a polished glassmorphism UI.
 
 ---
-
 ## 🖼️ Screenshots
-
-> *Replace the images below with your actual screenshots.*
 
 <br/>
 
-### 🏠 Landing Page
-<img src="./screenshots/landing.png" alt="Landing Page" width="100%" />
+### 🔐 Login Page
+<img width="2560" height="1440" alt="Screenshot (1310)" src="https://github.com/user-attachments/assets/a3401f68-6422-4f6a-87b6-f903cca10958" />
 
 ---
 
-### 📊 Dashboard — Live Travel Command Center
-<img src="./screenshots/dashboard.png" alt="Dashboard" width="100%" />
+### 📝 Signup Page
+<img width="2560" height="1440" alt="Screenshot (1311)" src="https://github.com/user-attachments/assets/bb018ac3-301c-446a-8e63-dc5e3f0c5004" />
 
 ---
 
-### 🗺️ Itinerary Builder
-<img src="./screenshots/itinerary-builder.png" alt="Itinerary Builder" width="100%" />
+### 📊 Dashboard
+<img width="2560" height="1440" alt="Screenshot (1302)" src="https://github.com/user-attachments/assets/44d2418e-2842-407d-8bec-3777ad3c3f59" />
 
 ---
 
-### 💰 Budget Analytics View
-<img src="./screenshots/budget-view.png" alt="Budget View" width="100%" />
+### ✈️ My Trips
+<img width="2560" height="1440" alt="Screenshot (1303)" src="https://github.com/user-attachments/assets/d351bb0f-6bc1-4e44-b75c-e9818742f2ba" />
+
+---
+
+### ➕ Create Trip
+<img width="2560" height="1440" alt="Screenshot (1304)" src="https://github.com/user-attachments/assets/ad224b03-b8be-46ab-84c2-c4e9017b7541" />
+
+---
+
+### 💰 Budget
+<img width="2560" height="1440" alt="Screenshot (1305)" src="https://github.com/user-attachments/assets/a8220abc-2f08-49ea-8a9b-779df7ae6c2b" />
+
+---
+
+### 🎯 Activity
+<img width="2560" height="1440" alt="Screenshot (1306)" src="https://github.com/user-attachments/assets/2f606b84-2e18-4493-953b-2be203966ecc" />
 
 ---
 
 ### 🎒 Packing Checklist
-<img src="./screenshots/packing.png" alt="Packing Checklist" width="100%" />
+<img width="2560" height="1440" alt="Screenshot (1307)" src="https://github.com/user-attachments/assets/87e74c78-af01-4296-a434-80b99dc7b19a" />
 
 ---
 
-### 📓 Travel Journal
-<img src="./screenshots/journal.png" alt="Journal" width="100%" />
+### 📓 Journal / Notes
+<img width="2560" height="1440" alt="Screenshot (1308)" src="https://github.com/user-attachments/assets/188e526b-aa53-4538-bdbd-88c9ee239646" />
 
 ---
 
-### 🔗 Public Shared Itinerary
-<img src="./screenshots/shared.png" alt="Shared Itinerary" width="100%" />
+### 👤 My Profile
+<img width="2560" height="1440" alt="Screenshot (1309)" src="https://github.com/user-attachments/assets/ef04c061-1833-4b64-b6eb-be69874e7b68" />
 
 ---
 
@@ -426,6 +436,5 @@ Add a formal license before any public production release.
 
 **Traveloop** — *Polished enough for a demo. Connected enough to feel real. Structured enough to keep growing.*
 
-<img src="./screenshots/footer-logo.png" alt="Traveloop Logo" width="120" />
-
 </div>
+<!-- done -->
