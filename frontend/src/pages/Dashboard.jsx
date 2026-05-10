@@ -151,7 +151,7 @@ export default function Dashboard() {
           </button>
           <div className="dashboard-title">
             <span>AI travel workspace</span>
-            <h1>Welcome back, {displayName}</h1>
+            <h1>Welcome Back, {displayName}</h1>
           </div>
           <label className="dashboard-search">
             <FiSearch />
