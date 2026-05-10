@@ -1,0 +1,22 @@
+.responsive-container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+.hide-on-mobile {
+  display: initial;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .show-on-mobile {
+    display: initial;
+  }
+}

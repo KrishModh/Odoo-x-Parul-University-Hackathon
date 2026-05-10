@@ -1,0 +1,11 @@
+.icon-button {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+}

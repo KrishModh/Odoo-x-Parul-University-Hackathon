@@ -1,0 +1,247 @@
+.profile-page {
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 10% 8%, rgba(67, 224, 207, 0.16), transparent 28%),
+    radial-gradient(circle at 92% 0%, rgba(157, 125, 255, 0.14), transparent 30%),
+    var(--bg);
+}
+
+.profile-header,
+.profile-stats,
+.profile-layout,
+.profile-toast,
+.profile-page > .form-alert {
+  width: min(100%, 1240px);
+  margin-inline: auto;
+}
+
+.profile-header,
+.profile-card,
+.profile-stats article {
+  border: 1px solid var(--hairline);
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(26px);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 30px;
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-identity img {
+  width: clamp(92px, 12vw, 132px);
+  height: clamp(92px, 12vw, 132px);
+  border-radius: 28px;
+  object-fit: cover;
+  border: 1px solid var(--hairline);
+}
+
+.profile-identity h1 {
+  margin: 0.55rem 0 0.35rem;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+.profile-identity p,
+.profile-identity small,
+.profile-trip-list p {
+  color: var(--muted);
+}
+
+.profile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.profile-toast {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 55%);
+  border-radius: 16px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent), transparent 90%);
+  font-weight: 850;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-stats article {
+  padding: 1rem;
+  border-radius: 22px;
+}
+
+.profile-stats strong {
+  display: block;
+  font-size: 2.2rem;
+}
+
+.profile-stats span {
+  color: var(--muted);
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 380px;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 26px;
+}
+
+.profile-card h2 {
+  margin: 0;
+}
+
+.profile-image-manager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.profile-image-manager label,
+.profile-image-manager button,
+.account-settings button,
+.account-settings select,
+.profile-trip-list button {
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  color: var(--text);
+  background: var(--glass);
+}
+
+.profile-image-manager label,
+.profile-image-manager button,
+.account-settings button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0 0.85rem;
+  font-weight: 900;
+}
+
+.profile-image-manager input {
+  display: none;
+}
+
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.profile-form label,
+.account-settings form {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.profile-form span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-transform: capitalize;
+}
+
+.profile-form input,
+.profile-form textarea,
+.profile-form select,
+.account-settings input,
+.account-settings select {
+  min-height: 48px;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 0.8rem;
+  outline: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+  font: inherit;
+}
+
+.profile-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.profile-side-stack {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.profile-trip-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.profile-trip-list button {
+  min-height: 58px;
+  display: grid;
+  justify-items: start;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.profile-trip-list span,
+.profile-trip-list small {
+  display: block;
+}
+
+.profile-trip-list small {
+  color: var(--muted);
+}
+
+.account-settings form {
+  gap: 0.7rem;
+}
+
+.account-settings .danger {
+  color: var(--danger);
+}
+
+@media (max-width: 980px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .profile-header,
+  .profile-identity,
+  .profile-header-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .profile-stats,
+  .profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

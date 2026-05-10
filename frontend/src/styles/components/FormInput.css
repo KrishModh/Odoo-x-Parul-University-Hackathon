@@ -1,0 +1,59 @@
+.field-shell {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.field-control {
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 0.95rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.field-control:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(67, 224, 207, 0.12);
+  transform: translateY(-1px);
+}
+
+.field-shell--error .field-control {
+  border-color: var(--danger);
+}
+
+.field-icon,
+.password-toggle {
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+}
+
+.field-control input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+}
+
+.field-control input::placeholder {
+  color: color-mix(in srgb, var(--muted), transparent 30%);
+}
+
+.password-toggle {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}

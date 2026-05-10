@@ -1,0 +1,307 @@
+.my-trips-page {
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 8% 6%, rgba(67, 224, 207, 0.16), transparent 26%),
+    radial-gradient(circle at 92% 0%, rgba(157, 125, 255, 0.14), transparent 28%),
+    var(--bg);
+}
+
+.my-trips-header,
+.trip-controls,
+.trip-group,
+.trip-toast,
+.trips-skeleton {
+  width: min(100%, 1240px);
+  margin-inline: auto;
+}
+
+.my-trips-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 28px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(26px);
+}
+
+.my-trips-header h1 {
+  margin: 0.55rem 0 0.35rem;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+.my-trips-header p {
+  max-width: 680px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.my-trips-header > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.trip-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px 220px;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.trip-controls label {
+  min-height: 52px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 0 0.9rem;
+  color: var(--muted);
+  background: var(--glass);
+}
+
+.trip-controls input,
+.trip-controls select {
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+  font: inherit;
+}
+
+.trip-toast {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 55%);
+  border-radius: 16px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent), transparent 90%);
+  font-weight: 850;
+}
+
+.trip-group {
+  margin-top: 1.35rem;
+}
+
+.trip-group-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.trip-group-heading h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.trip-group-heading span {
+  min-width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--glass);
+  font-weight: 950;
+}
+
+.my-trip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.my-trip-card {
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 26px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+}
+
+.my-trip-cover {
+  min-height: 190px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0.9rem;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.62)), var(--trip-image);
+  background-position: center;
+  background-size: cover;
+}
+
+.my-trip-cover span,
+.my-trip-actions button {
+  text-transform: capitalize;
+}
+
+.my-trip-cover span {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.48);
+  font-weight: 900;
+}
+
+.my-trip-body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.my-trip-body h3 {
+  margin: 0 0 0.4rem;
+}
+
+.my-trip-body p,
+.my-trip-meta {
+  color: var(--muted);
+}
+
+.my-trip-body p {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.25rem 0;
+}
+
+.my-trip-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.my-trip-meta strong {
+  color: var(--text);
+}
+
+.my-trip-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 42px;
+  gap: 0.45rem;
+}
+
+.my-trip-actions button {
+  min-height: 40px;
+  border: 1px solid var(--hairline);
+  border-radius: 13px;
+  color: var(--text);
+  background: var(--glass);
+  font-weight: 850;
+}
+
+.my-trip-actions .danger {
+  color: var(--danger);
+}
+
+.empty-trips,
+.trips-skeleton span {
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  background: var(--glass);
+}
+
+.empty-trips {
+  padding: 1.25rem;
+  color: var(--muted);
+}
+
+.trips-skeleton {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.trips-skeleton span {
+  min-height: 300px;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.trip-edit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.46);
+  backdrop-filter: blur(8px);
+}
+
+.trip-edit-modal form {
+  width: min(100%, 760px);
+  max-height: min(90vh, 820px);
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 26px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+}
+
+.trip-edit-modal .trip-group-heading,
+.trip-edit-modal textarea,
+.trip-edit-modal .primary-button {
+  grid-column: 1 / -1;
+}
+
+.trip-edit-modal input,
+.trip-edit-modal select,
+.trip-edit-modal textarea {
+  min-height: 46px;
+  border: 1px solid var(--hairline);
+  border-radius: 15px;
+  padding: 0.75rem;
+  outline: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+  font: inherit;
+}
+
+.trip-edit-modal textarea {
+  min-height: 92px;
+}
+
+@media (max-width: 980px) {
+  .trip-controls,
+  .my-trip-grid,
+  .trips-skeleton {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trip-controls label:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .my-trips-header,
+  .my-trips-header > div:last-child {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .trip-controls,
+  .my-trip-grid,
+  .trips-skeleton,
+  .trip-edit-modal form,
+  .my-trip-actions {
+    grid-template-columns: 1fr;
+  }
+}

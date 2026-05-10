@@ -1,0 +1,300 @@
+.create-trip-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(67, 224, 207, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 10%, rgba(157, 125, 255, 0.15), transparent 28%),
+    var(--bg);
+}
+
+.create-trip-aurora {
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  filter: blur(56px);
+  opacity: 0.34;
+  pointer-events: none;
+  animation: floatAura 12s ease-in-out infinite;
+}
+
+.create-trip-aurora-one {
+  left: -12rem;
+  bottom: 8%;
+  background: #20cbbf;
+}
+
+.create-trip-aurora-two {
+  top: -12rem;
+  right: -10rem;
+  background: #9d7dff;
+  animation-delay: -5s;
+}
+
+.create-trip-header,
+.create-trip-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1240px);
+  margin-inline: auto;
+}
+
+.create-trip-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.back-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0 0.95rem;
+  color: var(--text);
+  background: var(--glass);
+  font-weight: 900;
+}
+
+.create-trip-shell {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+.create-trip-intro {
+  position: sticky;
+  top: 1rem;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--hairline);
+  border-radius: 30px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(26px);
+}
+
+.create-trip-intro h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+.create-trip-intro p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.trip-creation-stats {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.trip-creation-stats article {
+  padding: 0.9rem;
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.trip-creation-stats strong,
+.trip-creation-stats span {
+  display: block;
+}
+
+.trip-creation-stats span {
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.create-trip-form-card {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  border: 1px solid var(--hairline);
+  border-radius: 30px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(28px);
+}
+
+.trip-upload-zone {
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  border: 1px dashed var(--hairline-strong);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(67, 224, 207, 0.08), rgba(157, 125, 255, 0.08)),
+    rgba(255, 255, 255, 0.045);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+}
+
+.trip-upload-zone:hover,
+.trip-upload-zone--dragging {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--glass), var(--accent) 8%);
+}
+
+.trip-upload-zone--error {
+  border-color: var(--danger);
+}
+
+.trip-upload-zone input {
+  display: none;
+}
+
+.trip-upload-zone img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trip-upload-zone img + small {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(12px);
+}
+
+.upload-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 950;
+}
+
+.upload-placeholder svg {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.trip-upload-zone small {
+  color: var(--muted);
+}
+
+.create-trip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.segmented-field {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.segmented-field > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.segmented-field button {
+  min-height: 42px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0 0.9rem;
+  color: var(--muted);
+  background: var(--glass);
+  font-weight: 900;
+  text-transform: capitalize;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.segmented-field button:hover,
+.segmented-field button.active {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent), transparent 48%);
+  background: color-mix(in srgb, var(--glass), var(--accent) 10%);
+  transform: translateY(-1px);
+}
+
+.textarea-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.textarea-field textarea {
+  min-height: 132px;
+  resize: vertical;
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 0.95rem;
+  outline: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+  font: inherit;
+}
+
+.textarea-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(67, 224, 207, 0.12);
+}
+
+.textarea-field.compact textarea {
+  min-height: 96px;
+}
+
+.success-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 55%);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent), transparent 90%);
+  font-weight: 850;
+}
+
+.create-trip-submit {
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .create-trip-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .create-trip-intro {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .create-trip-page {
+    padding: 0.75rem;
+  }
+
+  .create-trip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trip-upload-zone {
+    min-height: 220px;
+  }
+}
