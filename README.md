@@ -118,3 +118,5 @@ Users manually enter every signup field, including password. Google is used only
 ## Notes
 
 No API URLs, secrets, database URLs, OAuth keys, or Cloudinary credentials are hardcoded. Configure them through `.env` files before running the app.
+
+For hackathon stability, city and activity discovery currently uses curated local JSON data in `frontend/src/data/cities.json` and `frontend/src/data/activities.json`. User-selected cities and activities still save into PostgreSQL through trip and itinerary APIs.

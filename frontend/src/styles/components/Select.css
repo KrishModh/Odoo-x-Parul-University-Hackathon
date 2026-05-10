@@ -1,0 +1,28 @@
+.app-select-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.app-select-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.app-select-field select {
+  width: 100%;
+}
+
+.app-select-field small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.app-select-error {
+  color: var(--danger) !important;
+  font-weight: 800;
+}

@@ -68,14 +68,18 @@
   background: var(--glass);
 }
 
-.trip-controls input,
-.trip-controls select {
+.trip-controls input {
   min-width: 0;
   border: 0;
   outline: 0;
   color: var(--text);
   background: transparent;
   font: inherit;
+}
+
+.trip-controls select {
+  width: 100%;
+  min-width: 0;
 }
 
 .trip-toast {
@@ -262,7 +266,6 @@
 }
 
 .trip-edit-modal input,
-.trip-edit-modal select,
 .trip-edit-modal textarea {
   min-height: 46px;
   border: 1px solid var(--hairline);
@@ -272,6 +275,10 @@
   color: var(--text);
   background: rgba(255, 255, 255, 0.055);
   font: inherit;
+}
+
+.trip-edit-modal select {
+  width: 100%;
 }
 
 .trip-edit-modal textarea {

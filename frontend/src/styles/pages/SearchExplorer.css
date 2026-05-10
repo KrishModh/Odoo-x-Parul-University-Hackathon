@@ -89,8 +89,7 @@
 }
 
 .discovery-search,
-.discovery-filters,
-.trip-target-controls select {
+.discovery-filters {
   min-height: 48px;
   border: 1px solid var(--hairline);
   border-radius: 16px;
@@ -107,9 +106,7 @@
 }
 
 .discovery-search input,
-.discovery-filters input,
-.discovery-filters select,
-.trip-target-controls select {
+.discovery-filters input {
   min-width: 0;
   border: 0;
   outline: 0;
@@ -119,7 +116,8 @@
 }
 
 .trip-target-controls select {
-  padding: 0 0.75rem;
+  min-width: 190px;
+  flex: 1 1 190px;
 }
 
 .discovery-filters {
@@ -132,13 +130,16 @@
   color: var(--muted);
 }
 
-.discovery-filters input,
-.discovery-filters select {
+.discovery-filters input {
   min-height: 44px;
   border: 1px solid var(--hairline);
   border-radius: 14px;
   padding: 0 0.75rem;
   background: rgba(255, 255, 255, 0.045);
+}
+
+.discovery-filters select {
+  min-height: 44px;
 }
 
 .discovery-toast {
@@ -201,7 +202,7 @@
   line-height: 1.65;
 }
 
-.discovery-card-body div {
+.discovery-card-body > div:not(.discovery-card-actions) {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -209,8 +210,171 @@
   font-weight: 850;
 }
 
-.discovery-card button {
+.discovery-card button,
+.city-detail-activities button {
   width: 100%;
+}
+
+.discovery-card-actions {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 0.55rem;
+}
+
+.city-detail-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(10px);
+}
+
+.city-detail-modal article {
+  position: relative;
+  width: min(100%, 980px);
+  max-height: min(92vh, 900px);
+  overflow-y: auto;
+  border: 1px solid var(--hairline);
+  border-radius: 30px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+}
+
+.city-detail-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  min-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  padding: 0 0.85rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+}
+
+.city-detail-hero {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  padding: 1.3rem;
+  color: #fff;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.76)), var(--city-hero);
+  background-position: center;
+  background-size: cover;
+}
+
+.city-detail-hero span {
+  width: fit-content;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  font-weight: 900;
+}
+
+.city-detail-hero h2 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+}
+
+.city-detail-hero p,
+.city-detail-body p {
+  margin: 0;
+}
+
+.city-detail-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.city-detail-body > p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.city-detail-stats,
+.city-detail-lists,
+.city-detail-activities {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.city-detail-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.city-detail-stats span,
+.city-detail-lists span,
+.city-detail-activities button {
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: var(--glass);
+}
+
+.city-detail-stats span {
+  padding: 0.85rem;
+  color: var(--accent);
+  font-weight: 850;
+}
+
+.city-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.city-detail-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.city-detail-lists {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.city-detail-lists div,
+.city-detail-activities {
+  padding: 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.city-detail-lists h3,
+.city-detail-activities h3 {
+  margin: 0;
+}
+
+.city-detail-lists span {
+  display: inline-flex;
+  margin: 0.35rem 0.35rem 0 0;
+  padding: 0.5rem 0.65rem;
+  color: var(--muted);
+}
+
+.city-detail-activities button {
+  display: grid;
+  justify-items: start;
+  gap: 0.25rem;
+  min-height: 64px;
+  padding: 0.75rem;
+  color: var(--text);
+  text-align: left;
+}
+
+.city-detail-activities button span {
+  color: var(--muted);
 }
 
 .empty-discovery,
@@ -257,7 +421,11 @@
   .discovery-control-panel,
   .discovery-filters,
   .discovery-grid,
-  .discovery-skeleton {
+  .discovery-skeleton,
+  .discovery-card-actions,
+  .city-detail-stats,
+  .city-detail-gallery,
+  .city-detail-lists {
     grid-template-columns: 1fr;
   }
 }

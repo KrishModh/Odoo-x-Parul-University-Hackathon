@@ -10,6 +10,8 @@ import SearchExplorer from '../pages/SearchExplorer.jsx';
 import UserProfile from '../pages/UserProfile.jsx';
 import ItineraryView from '../pages/ItineraryView.jsx';
 import PackingChecklist from '../pages/PackingChecklist.jsx';
+import SharedItinerary from '../pages/SharedItinerary.jsx';
+import TripJournal from '../pages/TripJournal.jsx';
 import MainLayout from '../layouts/MainLayout.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 
@@ -32,6 +34,7 @@ export default function AppRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/share/:slug" element={<SharedItinerary />} />
       <Route
         path="/dashboard"
         element={
@@ -63,6 +66,14 @@ export default function AppRoutes() {
       <Route
         path="/packing"
         element={<ProtectedMainRoute><PackingChecklist /></ProtectedMainRoute>}
+      />
+      <Route
+        path="/journal"
+        element={<ProtectedMainRoute><TripJournal /></ProtectedMainRoute>}
+      />
+      <Route
+        path="/trip/:tripId/journal"
+        element={<ProtectedMainRoute><TripJournal /></ProtectedMainRoute>}
       />
       <Route
         path="/trip/:tripId/packing"

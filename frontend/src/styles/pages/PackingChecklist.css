@@ -70,10 +70,8 @@
   border-radius: 22px;
 }
 
-.packing-controls select,
 .packing-controls button,
-.packing-composer input,
-.packing-composer select {
+.packing-composer input {
   min-height: 46px;
   border: 1px solid var(--hairline);
   border-radius: 15px;
@@ -81,6 +79,11 @@
   color: var(--text);
   background: var(--glass);
   font: inherit;
+}
+
+.packing-controls select,
+.packing-composer select {
+  width: 100%;
 }
 
 .packing-layout {

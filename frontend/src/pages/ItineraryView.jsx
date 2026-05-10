@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiBarChart2, FiClock, FiCreditCard, FiDownload, FiEdit3, FiPieChart, FiShare2, FiTrash2 } from 'react-icons/fi';
 import { itineraryService } from '../services/itineraryService.js';
+import { shareService } from '../services/shareService.js';
 import '../styles/pages/ItineraryView.css';
 
 export default function ItineraryView() {
@@ -52,6 +53,19 @@ export default function ItineraryView() {
     load();
   };
 
+  const shareTrip = async () => {
+    try {
+      const payload = await shareService.generateShare(trip.id);
+      const shareUrl = `${window.location.origin}/share/${payload.slug}`;
+      await navigator.clipboard?.writeText(shareUrl);
+      setToast('Public itinerary link generated and copied.');
+      window.setTimeout(() => setToast(''), 2600);
+      setTrip(payload.trip);
+    } catch (shareError) {
+      setError(shareError.message);
+    }
+  };
+
   if (loading) return <section className="itinerary-view-page"><div className="view-skeleton">Loading itinerary view...</div></section>;
   if (!trip) return <section className="itinerary-view-page"><div className="form-alert">{error || 'Trip not found.'}</div></section>;
 
@@ -68,7 +82,7 @@ export default function ItineraryView() {
         </div>
         <div className="view-actions">
           <button type="button" onClick={() => navigate(`/trip/${trip.id}/itinerary`)}><FiEdit3 /> Edit</button>
-          <button type="button"><FiShare2 /> Share</button>
+          <button type="button" onClick={shareTrip}><FiShare2 /> Share</button>
           <button type="button"><FiDownload /> Export</button>
         </div>
       </section>

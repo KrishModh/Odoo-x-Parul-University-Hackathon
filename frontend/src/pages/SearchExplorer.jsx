@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiActivity, FiCompass, FiFilter, FiMapPin, FiPlus, FiSearch, FiStar } from 'react-icons/fi';
 import ThemeToggle from '../components/ThemeToggle.jsx';
 import { useTrips } from '../context/TripContext.jsx';
 import { useDebounce } from '../hooks/useDebounce.js';
-import { discoveryService } from '../services/discoveryService.js';
 import { itineraryService } from '../services/itineraryService.js';
+import activitiesData from '../data/activities.json';
+import citiesData from '../data/cities.json';
 import '../styles/pages/SearchExplorer.css';
 
 const categories = ['adventure', 'food', 'nightlife', 'sightseeing', 'nature', 'luxury', 'family'];
@@ -15,13 +16,15 @@ const fallbackActivity = 'https://images.unsplash.com/photo-1527631746610-bca00a
 
 export default function SearchExplorer() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { trips, refreshTrips } = useTrips();
-  const [activeTab, setActiveTab] = useState('cities');
-  const [query, setQuery] = useState('');
+  const [activeTab, setActiveTab] = useState(searchParams.get('tab') === 'activities' ? 'activities' : 'cities');
+  const [query, setQuery] = useState(searchParams.get('q') || '');
   const [cityFilters, setCityFilters] = useState({ country: '', region: '', budget: '', popularity: '' });
   const [activityFilters, setActivityFilters] = useState({ category: '', budget: '', duration: '' });
   const [cities, setCities] = useState([]);
   const [activities, setActivities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState(null);
   const [selectedTripId, setSelectedTripId] = useState('');
   const [selectedSectionId, setSelectedSectionId] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,6 +39,13 @@ export default function SearchExplorer() {
   }, [refreshTrips]);
 
   useEffect(() => {
+    const nextTab = searchParams.get('tab');
+    const nextQuery = searchParams.get('q');
+    if (nextTab === 'activities' || nextTab === 'cities') setActiveTab(nextTab);
+    if (nextQuery) setQuery(nextQuery);
+  }, [searchParams]);
+
+  useEffect(() => {
     if (!selectedTripId && trips[0]) setSelectedTripId(String(trips[0].id));
   }, [trips, selectedTripId]);
 
@@ -48,21 +58,34 @@ export default function SearchExplorer() {
     setLoading(true);
     setError('');
 
-    const params = activeTab === 'cities'
-      ? { q: debouncedQuery, ...cityFilters }
-      : { q: debouncedQuery, ...activityFilters };
-
-    const request = activeTab === 'cities' ? discoveryService.getCities(params) : discoveryService.getActivities(params);
-    request
-      .then((payload) => {
-        if (!active) return;
-        if (activeTab === 'cities') setCities(payload.cities || []);
-        else setActivities(payload.activities || []);
-      })
-      .catch((searchError) => {
-        if (active) setError(searchError.message);
-      })
-      .finally(() => active && setLoading(false));
+    window.setTimeout(() => {
+      if (!active) return;
+      const normalizedQuery = debouncedQuery.trim().toLowerCase();
+      if (activeTab === 'cities') {
+        const nextCities = citiesData.filter((city) => {
+          const text = `${city.name} ${city.state} ${city.country} ${city.tagline} ${city.description} ${city.trip_type.join(' ')}`.toLowerCase();
+          const matchesQuery = !normalizedQuery || text.includes(normalizedQuery);
+          const matchesCountry = !cityFilters.country || city.country.toLowerCase().includes(cityFilters.country.toLowerCase());
+          const matchesRegion = !cityFilters.region || city.state.toLowerCase().includes(cityFilters.region.toLowerCase());
+          const matchesBudget = !cityFilters.budget || Number(city.avg_budget) <= Number(cityFilters.budget);
+          const matchesPopularity = !cityFilters.popularity || Number(city.popularity_score) >= Number(cityFilters.popularity);
+          return matchesQuery && matchesCountry && matchesRegion && matchesBudget && matchesPopularity;
+        });
+        setCities(nextCities);
+      } else {
+        const nextActivities = activitiesData.filter((activity) => {
+          const city = citiesData.find((item) => item.id === activity.city_id);
+          const text = `${activity.title} ${activity.category} ${activity.description} ${activity.activity_type} ${city?.name || ''}`.toLowerCase();
+          const matchesQuery = !normalizedQuery || text.includes(normalizedQuery);
+          const matchesCategory = !activityFilters.category || activity.category.toLowerCase() === activityFilters.category.toLowerCase() || activity.activity_type.toLowerCase() === activityFilters.category.toLowerCase();
+          const matchesBudget = !activityFilters.budget || Number(activity.estimated_cost) <= Number(activityFilters.budget);
+          const matchesDuration = !activityFilters.duration || activity.duration.toLowerCase().includes(activityFilters.duration.toLowerCase());
+          return matchesQuery && matchesCategory && matchesBudget && matchesDuration;
+        });
+        setActivities(nextActivities);
+      }
+      setLoading(false);
+    }, 220);
 
     return () => {
       active = false;
@@ -86,7 +109,7 @@ export default function SearchExplorer() {
         city_name: city.name,
         start_date: selectedTrip.start_date,
         end_date: selectedTrip.end_date,
-        notes: `${city.name}, ${city.country}. Best season: ${city.best_season || 'Flexible'}.`
+        notes: `${city.name}, ${city.state}. ${city.tagline}. Best season: ${city.best_season || 'Flexible'}. Highlights: ${(city.top_highlights || []).join(', ')}.`
       });
       await refreshTrips();
       flash(`${city.name} added to ${selectedTrip.trip_name}.`);
@@ -107,7 +130,7 @@ export default function SearchExplorer() {
         activity_name: activity.title || activity.activity_name,
         description: activity.description,
         estimated_cost: activity.estimated_cost,
-        activity_time: '10:00',
+        activity_time: activity.best_time === 'Evening' ? '18:00' : activity.best_time === 'Night' ? '21:00' : '10:00',
         category: activity.category
       });
       await refreshTrips();
@@ -176,32 +199,74 @@ export default function SearchExplorer() {
         <section className="discovery-grid">
           {cities.length ? cities.map((city) => (
             <motion.article className="discovery-card" key={city.id} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="discovery-image" style={{ '--card-image': `url(${city.image || fallbackCity})` }}><span>{city.popularity_score} score</span></div>
+              <div className="discovery-image" style={{ '--card-image': `url(${city.hero_image || fallbackCity})` }}><span>{city.popularity_score} score</span></div>
               <div className="discovery-card-body">
                 <h2>{city.name}</h2>
-                <p>{city.country}{city.region ? ` · ${city.region}` : ''}</p>
+                <p>{city.country} · {city.state}</p>
                 <p>{city.description}</p>
                 <div><span>Avg INR {Number(city.avg_budget).toLocaleString()}</span><span>{city.best_season}</span></div>
-                <button type="button" onClick={() => addCityToTrip(city)}><FiPlus /> Add to Trip</button>
+                <div className="discovery-card-actions">
+                  <button type="button" onClick={() => setSelectedCity(city)}>View Details</button>
+                  <button type="button" onClick={() => addCityToTrip(city)}><FiPlus /> Add to Trip</button>
+                </div>
               </div>
             </motion.article>
-          )) : <div className="empty-discovery">No cities found. Add city records to PostgreSQL or adjust filters.</div>}
+          )) : <div className="empty-discovery">No curated cities found. Try a different search or filter.</div>}
         </section>
       ) : (
         <section className="discovery-grid">
           {activities.length ? activities.map((activity) => (
             <motion.article className="discovery-card" key={activity.id} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="discovery-image" style={{ '--card-image': `url(${activity.image || fallbackActivity})` }}><span><FiStar /> {activity.rating || 'New'}</span></div>
+              <div className="discovery-image" style={{ '--card-image': `url(${activity.activity_image || fallbackActivity})` }}><span><FiStar /> {activity.rating || 'New'}</span></div>
               <div className="discovery-card-body">
                 <h2>{activity.title || activity.activity_name}</h2>
-                <p>{activity.category} · {activity.duration || 'Flexible'}</p>
+                <p>{activity.category} · {activity.duration || 'Flexible'} · {citiesData.find((city) => city.id === activity.city_id)?.name}</p>
                 <p>{activity.description}</p>
-                <div><span>INR {Number(activity.estimated_cost).toLocaleString()}</span><span>{activity.activity_time}</span></div>
+                <div><span>INR {Number(activity.estimated_cost).toLocaleString()}</span><span>{activity.best_time}</span></div>
                 <button type="button" onClick={() => addActivityToItinerary(activity)}><FiPlus /> Add to Itinerary</button>
               </div>
             </motion.article>
-          )) : <div className="empty-discovery">No activities found. Add discovery activities to PostgreSQL or adjust filters.</div>}
+          )) : <div className="empty-discovery">No curated activities found. Try a different search or filter.</div>}
         </section>
+      )}
+
+      {selectedCity && (
+        <div className="city-detail-modal" role="dialog" aria-modal="true">
+          <motion.article initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}>
+            <button className="city-detail-close" type="button" onClick={() => setSelectedCity(null)}>Close</button>
+            <div className="city-detail-hero" style={{ '--city-hero': `url(${selectedCity.hero_image})` }}>
+              <span>{selectedCity.popularity_score} popularity</span>
+              <h2>{selectedCity.name}</h2>
+              <p>{selectedCity.tagline}</p>
+            </div>
+            <div className="city-detail-body">
+              <p>{selectedCity.description}</p>
+              <div className="city-detail-stats">
+                <span>Budget INR {Number(selectedCity.avg_budget).toLocaleString()}</span>
+                <span>{selectedCity.best_season}</span>
+                <span>{selectedCity.ideal_duration}</span>
+                <span>{selectedCity.weather}</span>
+              </div>
+              <div className="city-detail-gallery">
+                {selectedCity.gallery_images.map((image) => <img src={image} alt={`${selectedCity.name} gallery`} key={image} />)}
+              </div>
+              <div className="city-detail-lists">
+                <div><h3>Top highlights</h3>{selectedCity.top_highlights.map((item) => <span key={item}>{item}</span>)}</div>
+                <div><h3>Travel tips</h3>{selectedCity.travel_tips.map((item) => <span key={item}>{item}</span>)}</div>
+              </div>
+              <div className="city-detail-activities">
+                <h3>Top activities</h3>
+                {activitiesData.filter((activity) => activity.city_id === selectedCity.id).slice(0, 4).map((activity) => (
+                  <button type="button" key={activity.id} onClick={() => addActivityToItinerary(activity)}>
+                    <strong>{activity.title}</strong>
+                    <span>{activity.category} · INR {Number(activity.estimated_cost).toLocaleString()}</span>
+                  </button>
+                ))}
+              </div>
+              <button className="primary-button" type="button" onClick={() => addCityToTrip(selectedCity)}><FiPlus /> Add {selectedCity.name} to Trip</button>
+            </div>
+          </motion.article>
+        </div>
       )}
     </main>
   );

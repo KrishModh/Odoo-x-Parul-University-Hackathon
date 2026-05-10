@@ -127,7 +127,6 @@
 .profile-image-manager label,
 .profile-image-manager button,
 .account-settings button,
-.account-settings select,
 .profile-trip-list button {
   border: 1px solid var(--hairline);
   border-radius: 16px;
@@ -172,9 +171,7 @@
 
 .profile-form input,
 .profile-form textarea,
-.profile-form select,
-.account-settings input,
-.account-settings select {
+.account-settings input {
   min-height: 48px;
   border: 1px solid var(--hairline);
   border-radius: 16px;
@@ -183,6 +180,11 @@
   color: var(--text);
   background: rgba(255, 255, 255, 0.055);
   font: inherit;
+}
+
+.profile-form select,
+.account-settings select {
+  width: 100%;
 }
 
 .profile-form textarea {

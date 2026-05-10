@@ -15,6 +15,8 @@ class Trip(db.Model):
     travelers_count = db.Column(db.Integer, nullable=False)
     travel_type = db.Column(db.String(30), nullable=False)
     visibility = db.Column(db.String(20), nullable=False, default='private')
+    is_public = db.Column(db.Boolean, nullable=False, default=False)
+    public_slug = db.Column(db.String(180), unique=True, nullable=True, index=True)
     cover_image = db.Column(db.String(500), nullable=True)
     tags = db.Column(db.JSON, nullable=True)
     notes = db.Column(db.Text, nullable=True)
@@ -23,6 +25,7 @@ class Trip(db.Model):
 
     user = db.relationship('User', back_populates='trips')
     sections = db.relationship('TripSection', back_populates='trip', cascade='all, delete-orphan', order_by='TripSection.position')
+    journal_entries = db.relationship('Journal', back_populates='trip', cascade='all, delete-orphan', order_by='Journal.created_at.desc()')
 
     def to_dict(self):
         return {
@@ -37,6 +40,8 @@ class Trip(db.Model):
             'travelers_count': self.travelers_count,
             'travel_type': self.travel_type,
             'visibility': self.visibility,
+            'is_public': self.is_public,
+            'public_slug': self.public_slug,
             'cover_image': self.cover_image,
             'tags': self.tags or [],
             'notes': self.notes,

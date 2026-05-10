@@ -15,7 +15,7 @@ const navItems = [
   { label: 'Budget Planner', icon: <FiCreditCard />, path: '/my-trips' },
   { label: 'Activities', icon: <FiActivity />, path: '/explore' },
   { label: 'Packing Checklist', icon: <FiPackage />, path: '/packing' },
-  { label: 'Notes / Journal', icon: <FiBookOpen />, path: '/my-trips' },
+  { label: 'Notes / Journal', icon: <FiBookOpen />, path: '/journal' },
   { label: 'Shared Trips', icon: <FiShare2 />, path: '/my-trips' },
   { label: 'Profile', icon: <FiUser />, path: '/profile' },
   { label: 'Settings', icon: <FiSettings />, path: '/profile' }
