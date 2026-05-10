@@ -1,0 +1,45 @@
+.auth-heading {
+  margin-bottom: 1.4rem;
+}
+
+.auth-heading span {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.auth-heading h2 {
+  margin: 0.45rem 0 0.4rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.auth-heading p,
+.switch-copy {
+  color: var(--muted);
+}
+
+.auth-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+
+.form-row a,
+.switch-copy a {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.switch-copy {
+  margin: 1.4rem 0 0;
+  text-align: center;
+}

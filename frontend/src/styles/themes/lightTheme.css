@@ -1,0 +1,15 @@
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --text: #101423;
+  --muted: #657085;
+  --accent: #008b84;
+  --accent-2: #6552d9;
+  --danger: #d93454;
+  --hairline: rgba(16, 20, 35, 0.12);
+  --hairline-strong: rgba(16, 20, 35, 0.24);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-strong: rgba(255, 255, 255, 0.82);
+  --shadow: 0 24px 90px rgba(31, 42, 68, 0.16);
+}
