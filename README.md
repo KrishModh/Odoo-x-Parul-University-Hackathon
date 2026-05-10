@@ -6,7 +6,7 @@ Traveloop is a premium AI-powered travel planning platform. This repository cont
 
 - Premium responsive login and signup UI
 - Dark and light theme support
-- JWT register/login flow
+- JWT register/login flow 
 - Password hashing with bcrypt
 - PostgreSQL models with SQLAlchemy
 - Cloudinary profile image upload support
