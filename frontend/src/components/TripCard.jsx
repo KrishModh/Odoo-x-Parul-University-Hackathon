@@ -63,7 +63,7 @@ function TripCard({ title, days, budget }) {
           onClick={handleDelete}
           className="bg-red-500 text-white px-6 py-3 rounded-2xl text-lg font-medium hover:bg-red-600"
         >
-          Delete
+          Deletee
         </button>
 
       </div>
