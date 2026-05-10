@@ -1,0 +1,289 @@
+.itinerary-page {
+  min-height: 100vh;
+  padding: clamp(0.85rem, 2vw, 1.5rem);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(67, 224, 207, 0.16), transparent 28%),
+    radial-gradient(circle at 92% 4%, rgba(157, 125, 255, 0.14), transparent 30%),
+    var(--bg);
+}
+
+.itinerary-header,
+.itinerary-hero,
+.itinerary-layout,
+.itinerary-toast,
+.itinerary-loading,
+.itinerary-page > .form-alert {
+  width: min(100%, 1240px);
+  margin-inline: auto;
+}
+
+.itinerary-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itinerary-hero,
+.section-composer,
+.itinerary-section-card,
+.empty-itinerary,
+.itinerary-loading {
+  border: 1px solid var(--hairline);
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(26px);
+}
+
+.itinerary-hero {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1rem;
+  align-items: end;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 30px;
+}
+
+.itinerary-hero h1 {
+  margin: 0.7rem 0;
+  font-size: clamp(2.5rem, 6vw, 5.6rem);
+  line-height: 0.9;
+}
+
+.itinerary-hero p,
+.itinerary-budget-card span,
+.itinerary-budget-card small {
+  color: var(--muted);
+}
+
+.itinerary-budget-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(67, 224, 207, 0.13), rgba(157, 125, 255, 0.1));
+}
+
+.itinerary-budget-card strong {
+  font-size: 2rem;
+}
+
+.itinerary-toast {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 55%);
+  border-radius: 16px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent), transparent 90%);
+  font-weight: 850;
+}
+
+.itinerary-layout {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.section-composer {
+  position: sticky;
+  top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  align-self: start;
+  padding: 1rem;
+  border-radius: 26px;
+}
+
+.section-composer h2 {
+  margin: 0;
+}
+
+.section-composer label,
+.activity-composer {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.section-composer span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.section-composer input,
+.section-composer textarea,
+.inline-section-edit input,
+.activity-composer input,
+.activity-composer textarea {
+  min-height: 44px;
+  border: 1px solid var(--hairline);
+  border-radius: 15px;
+  padding: 0.75rem;
+  outline: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+  font: inherit;
+}
+
+.section-composer textarea,
+.activity-composer textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.itinerary-sections {
+  display: grid;
+  gap: 1rem;
+}
+
+.itinerary-section-card,
+.empty-itinerary,
+.itinerary-loading {
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.itinerary-loading,
+.empty-itinerary {
+  padding: 1.25rem;
+}
+
+.section-card-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  border: 0;
+  padding: 1rem;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  text-align: left;
+}
+
+.section-card-header > span {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #07100f;
+  background: linear-gradient(135deg, var(--accent), #e5ff9f);
+  font-weight: 950;
+}
+
+.section-card-header h2,
+.section-card-header p {
+  margin: 0;
+}
+
+.section-card-header p {
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.section-card-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.inline-section-edit {
+  display: grid;
+  grid-template-columns: 1fr 150px 150px 44px;
+  gap: 0.6rem;
+}
+
+.inline-section-edit button,
+.builder-activity-card button,
+.activity-composer button {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  color: var(--text);
+  background: var(--glass);
+  font-weight: 900;
+}
+
+.activity-timeline-builder {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.builder-activity-card {
+  display: grid;
+  grid-template-columns: 96px 1fr 42px;
+  gap: 0.8rem;
+  align-items: start;
+  padding: 0.85rem;
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.builder-activity-card time {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.builder-activity-card strong,
+.builder-activity-card span {
+  display: block;
+}
+
+.builder-activity-card span,
+.builder-activity-card p {
+  color: var(--muted);
+}
+
+.activity-composer {
+  grid-template-columns: 1fr 120px 120px 140px;
+  padding: 0.85rem;
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.activity-composer textarea,
+.activity-composer button {
+  grid-column: 1 / -1;
+}
+
+.activity-composer button {
+  min-height: 46px;
+}
+
+.floating-create-trip {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #07100f;
+  background: linear-gradient(135deg, var(--accent), #e5ff9f);
+  box-shadow: 0 18px 48px rgba(67, 224, 207, 0.24);
+}
+
+@media (max-width: 980px) {
+  .itinerary-hero,
+  .itinerary-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-composer {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .inline-section-edit,
+  .builder-activity-card,
+  .activity-composer {
+    grid-template-columns: 1fr;
+  }
+}

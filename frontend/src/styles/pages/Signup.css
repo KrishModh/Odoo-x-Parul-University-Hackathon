@@ -1,0 +1,119 @@
+.signup-form {
+  gap: 0.85rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.upload-dropzone {
+  min-height: 86px;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem;
+  border: 1px dashed var(--hairline-strong);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.upload-dropzone:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.upload-dropzone input {
+  display: none;
+}
+
+.upload-dropzone svg,
+.upload-dropzone img {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  object-fit: cover;
+  color: var(--accent);
+  padding: 0.9rem;
+  background: var(--glass);
+}
+
+.upload-dropzone img {
+  padding: 0;
+}
+
+.upload-dropzone span {
+  color: var(--muted);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-verification-block {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.verify-email-button {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  color: var(--text);
+  background:
+    linear-gradient(135deg, rgba(67, 224, 207, 0.14), rgba(157, 125, 255, 0.14)),
+    var(--glass);
+  font-weight: 900;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.verify-email-button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 38px rgba(67, 224, 207, 0.14);
+  transform: translateY(-1px);
+}
+
+.verify-email-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.verify-email-button svg,
+.verified-badge svg {
+  color: var(--accent);
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 58%);
+  border-radius: 999px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent), transparent 90%);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.verified-badge span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
