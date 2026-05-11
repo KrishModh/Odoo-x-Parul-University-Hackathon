@@ -301,7 +301,7 @@ Selections from discovery can still be saved into PostgreSQL through the itinera
 ### 1. Clone
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/KrishModh/Odoo-x-Parul-University-Hackathon
 cd Odoo-x-Parul-University-Hackathon
 ```
 
