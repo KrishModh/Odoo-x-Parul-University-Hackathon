@@ -427,8 +427,8 @@ No secrets or credentials are hardcoded anywhere in the application.
 
 ## 📄 License
 
-Built for the **Odoo × Parul University Hackathon**. For educational and demo use.
-Add a formal license before any public production release.
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+Built for the **Odoo × Parul University Hackathon** by Krish Modh, Aakansha Patidar, and Sahil Khan.
 
 ---
 
